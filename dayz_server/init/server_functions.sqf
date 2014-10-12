@@ -1103,11 +1103,6 @@ server_logUnlockLockEvent = {
 		diag_log format["SAFE %5: ID:%1 UID:%2 BY %3(%4)", _objectID, _objectUID, (name _player), (getPlayerUID _player), _statusText];
 	};
 };
-
-
-#include "\Antihack\SurvivalAntihack.sqf"
-execVM "\z\addons\dayz_server\init\ESSfloor.sqf";
-
 KK_fnc_floatToString = {
 	private "_arr";
 	if (abs (_this - _this % 1) == 0) exitWith { str _this };
@@ -1126,3 +1121,7 @@ KK_fnc_positionToString = {
 		_this select 2 call KK_fnc_floatToString
 	]
 };
+
+
+#include "\Antihack\SurvivalAntihack.sqf"
+execVM "\z\addons\dayz_server\init\ESSfloor.sqf";
