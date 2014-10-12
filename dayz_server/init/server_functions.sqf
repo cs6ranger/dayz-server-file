@@ -590,17 +590,202 @@ dayz_objectUID = {
 
 dayz_objectUID2 = {
 	private["_position","_dir","_key"];
-	_dir = _this select 0;
-	_key = "";
-	_position = _this select 1;
-	{
-		_x = _x * 10;
-		if ( _x < 0 ) then { _x = _x * -10 };
-		_key = _key + str(round(_x));
-	} count _position;
-	_key = _key + str(round(_dir));
+	if((count _this) == 2) then{
+		_dir = _this select 0;
+		_key = "";
+		_position = _this select 1;
+		{
+			_x = _x * 10;
+			if ( _x < 0 ) then { _x = _x * -10 };
+			_key = _key + str(round(_x));
+		} count _position;
+		_key = _key + str(round(_dir));
+	}else{
+		if((count _this) == 3) then{
+					if(typename (_this select 2) == "ARRAY")then{
+							_vector = _this select 2;
+							if(count _vector == 2)then{
+								if(((count (_vector select 0)) == 3) && ((count (_vector select 1)) == 3))then{
+										_key = "";
+										_position = _this select 1;
+										{
+											_x = _x * 10;
+											if ( _x < 0 ) then { _x = _x * -10 };
+											_key = _key + str(round(_x));
+										} count _position;
+										
+										_vecCnt = 0;
+										{
+											_set = _x;
+											{
+												_vecCnt = _vecCnt + (round (_x * 100))
+												
+											} foreach _set;
+											
+										} foreach _vector;
+										if(_vecCnt < 0)then{
+											_vecCnt = ((_vecCnt * -1) * 3);
+										};
+										_key = _key + str(_vecCnt);	
+								}else{
+									_dir = _this select 0;
+									_key = "";
+									_position = _this select 1;
+									{
+										_x = _x * 10;
+										if ( _x < 0 ) then { _x = _x * -10 };
+										_key = _key + str(round(_x));
+									} count _position;
+									_key = _key + str(round(_dir));
+								};
+							}else{
+								_dir = _this select 0;
+								_key = "";
+								_position = _this select 1;
+								{
+									_x = _x * 10;
+									if ( _x < 0 ) then { _x = _x * -10 };
+									_key = _key + str(round(_x));
+								} count _position;
+								_key = _key + str(round(_dir));
+							};
+						
+					}else{
+						_dir = _this select 0;
+						_key = "";
+						_position = _this select 1;
+						{
+							_x = _x * 10;
+							if ( _x < 0 ) then { _x = _x * -10 };
+							_key = _key + str(round(_x));
+						} count _position;
+						_key = _key + str(round(_dir));
+					};
+		}else{
+			if((count _this) == 4) then{
+					if(typename (_this select 3) == "ARRAY")then{
+						_vector = _this select 3;
+						if(count _vector == 2)then{
+							if(((count (_vector select 0)) == 3) && ((count (_vector select 1)) == 3))then{
+										_key = "";
+										_position = _this select 1;
+										{
+											_x = _x * 10;
+											if ( _x < 0 ) then { _x = _x * -10 };
+											_key = _key + str(round(_x));
+										} count _position;
+										
+										_vecCnt = 0;
+										{
+											_set = _x;
+											{
+												_vecCnt = _vecCnt + (round (_x * 100))
+												
+											} foreach _set;
+											
+										} foreach _vector;
+										if(_vecCnt < 0)then{
+											_vecCnt = ((_vecCnt * -1) * 3);
+										};
+										_key = _key + str(_vecCnt);	
+							}else{
+								_dir = _this select 0;
+								_key = "";
+								_position = _this select 1;
+								{
+									_x = _x * 10;
+									if ( _x < 0 ) then { _x = _x * -10 };
+									_key = _key + str(round(_x));
+								} count _position;
+								_key = _key + str(round(_dir));
+							};
+						}else{
+							_dir = _this select 0;
+							_key = "";
+							_position = _this select 1;
+							{
+								_x = _x * 10;
+								if ( _x < 0 ) then { _x = _x * -10 };
+								_key = _key + str(round(_x));
+							} count _position;
+							_key = _key + str(round(_dir));
+						};
+					}else{
+						if(typename (_this select 2) == "ARRAY")then{
+							_vector = _this select 2;
+							if(count _vector == 2)then{
+								if(((count (_vector select 0)) == 3) && ((count (_vector select 1)) == 3))then{
+											_key = "";
+											_position = _this select 1;
+											{
+												_x = _x * 10;
+												if ( _x < 0 ) then { _x = _x * -10 };
+												_key = _key + str(round(_x));
+											} count _position;
+											
+											_vecCnt = 0;
+											{
+												_set = _x;
+												{
+													_vecCnt = _vecCnt + (round (_x * 100))
+													
+												} foreach _set;
+												
+											} foreach _vector;
+											if(_vecCnt < 0)then{
+												_vecCnt = ((_vecCnt * -1) * 3);
+											};
+											_key = _key + str(_vecCnt);	
+								}else{
+									_dir = _this select 0;
+									_key = "";
+									_position = _this select 1;
+									{
+										_x = _x * 10;
+										if ( _x < 0 ) then { _x = _x * -10 };
+										_key = _key + str(round(_x));
+									} count _position;
+									_key = _key + str(round(_dir));
+								};
+							}else{
+								_dir = _this select 0;
+								_key = "";
+								_position = _this select 1;
+								{
+									_x = _x * 10;
+									if ( _x < 0 ) then { _x = _x * -10 };
+									_key = _key + str(round(_x));
+								} count _position;
+								_key = _key + str(round(_dir));
+							};
+						}else{
+							_dir = _this select 0;
+							_key = "";
+							_position = _this select 1;
+							{
+								_x = _x * 10;
+								if ( _x < 0 ) then { _x = _x * -10 };
+								_key = _key + str(round(_x));
+							} count _position;
+							_key = _key + str(round(_dir));
+						};
+					};
+			}else{
+				_dir = _this select 0;
+				_key = "";
+				_position = _this select 1;
+				{
+					_x = _x * 10;
+					if ( _x < 0 ) then { _x = _x * -10 };
+					_key = _key + str(round(_x));
+				} count _position;
+				_key = _key + str(round(_dir));
+			};
+		};
+		
+	};
 	_key
-};
+}; 
 
 dayz_objectUID3 = {
 	private["_position","_dir","_key"];
@@ -918,7 +1103,6 @@ server_logUnlockLockEvent = {
 		diag_log format["SAFE %5: ID:%1 UID:%2 BY %3(%4)", _objectID, _objectUID, (name _player), (getPlayerUID _player), _statusText];
 	};
 };
-<<<<<<< HEAD
 KK_fnc_floatToString = {
 	private "_arr";
 	if (abs (_this - _this % 1) == 0) exitWith { str _this };
@@ -941,9 +1125,3 @@ KK_fnc_positionToString = {
 
 #include "\Antihack\SurvivalAntihack.sqf"
 execVM "\z\addons\dayz_server\init\ESSfloor.sqf";
-=======
-
-
-#include "\Antihack\SurvivalAntihack.sqf"
-execVM "\z\addons\dayz_server\init\ESSfloor.sqf";
->>>>>>> parent of 9a899c4... added snap build pro
