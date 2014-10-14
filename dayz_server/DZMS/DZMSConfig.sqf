@@ -71,7 +71,7 @@ DZMSSaveVehicles = false;
 DZMSChoppers = ["UH1H_DZE","Mi17_DZE"];
 
 //Small Vehicles (Humvees)
-DZMSSmallVic = ["hilux1_civil_3_open_EP1","SUV_TK_CIV_EP1","HMMWV_DZE","UAZ_Unarmed_UN_EP1"];
+DZMSSmallVic = ["hilux1_civil_3_open_EP1","SUV_TK_CIV_EP1","HMMWV_DZ","UAZ_Unarmed_UN_EP1"];
 
 //Large Vehicles (Urals)
 DZMSLargeVic = ["Ural_TK_CIV_EP1","Ural_INS"];
